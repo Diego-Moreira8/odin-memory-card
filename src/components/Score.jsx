@@ -11,8 +11,8 @@ const StyledScore = styled.div`
   }
 `;
 
-function Score() {
-  return <StyledScore>Score: 12</StyledScore>;
+function Score({ score }) {
+  return <StyledScore>Score: {score}</StyledScore>;
 }
 
 export default Score;

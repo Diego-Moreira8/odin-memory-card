@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import Card from "./Card";
@@ -35,8 +35,8 @@ const StyledCards = styled.div`
   }
 `;
 
-function Cards() {
-  const [characters, setCharacters] = useState([
+function Cards({ updateScore }) {
+  const resetCharacters = [
     { id: uuid(), clicked: false, name: "Becca", imgSrc: becca },
     { id: uuid(), clicked: false, name: "BoJack Horseman", imgSrc: bojack },
     { id: uuid(), clicked: false, name: "Charlotte Carson", imgSrc: charlotte },
@@ -59,21 +59,43 @@ function Cards() {
     },
     { id: uuid(), clicked: false, name: "Princess Carolyn", imgSrc: princess },
     { id: uuid(), clicked: false, name: "Todd Chavez", imgSrc: todd },
-  ]);
+  ];
+
+  const [characters, setCharacters] = useState(
+    structuredClone(resetCharacters)
+  );
 
   const handleClick = (id) => {
-    const newArray = [...shuffleArray(characters)];
+    let newArray = structuredClone(characters);
 
+    // Finds the clicked character
     for (let char of newArray) {
       if (char.id === id) {
-        char.clicked = true;
-        break;
+        if (char.clicked) {
+          alert("Already clicked 😢\nThe game will restart now.");
+          setCharacters(structuredClone(resetCharacters));
+        } else {
+          char.clicked = true;
+          newArray = structuredClone(shuffleArray(newArray));
+          setCharacters(structuredClone(newArray));
+        }
       }
     }
-
-    console.table(newArray);
-    setCharacters([...newArray]);
   };
+
+  useEffect(() => {
+    let clickedCards = 0;
+    for (let char of characters) {
+      char.clicked && clickedCards++;
+    }
+
+    if (clickedCards === 12) {
+      alert("You win!!!\n🎉🎉🎉\nThe game will restart now.");
+      setCharacters(structuredClone(resetCharacters));
+    }
+
+    updateScore(clickedCards);
+  }, [characters]);
 
   return (
     <StyledCards>
