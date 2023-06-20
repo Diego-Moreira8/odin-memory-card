@@ -37,31 +37,48 @@ const StyledCards = styled.div`
 
 function Cards() {
   const [characters, setCharacters] = useState([
-    { id: uuid(), name: "Becca", imgSrc: becca },
-    { id: uuid(), name: "BoJack Horseman", imgSrc: bojack },
-    { id: uuid(), name: "Charlotte Carson", imgSrc: charlotte },
-    { id: uuid(), name: "Diane Nguyen", imgSrc: diane },
-    { id: uuid(), name: "Hollyhock", imgSrc: hollyhock },
-    { id: uuid(), name: "Kelsey Jannings", imgSrc: kelsey },
-    { id: uuid(), name: "Kevin", imgSrc: kevin },
-    { id: uuid(), name: "Margo Martindale", imgSrc: margo },
-    { id: uuid(), name: "Meow Meow Fuzzyface", imgSrc: fuzzyface },
-    { id: uuid(), name: "Mr. Peanutbutter", imgSrc: peanutbutter },
-    { id: uuid(), name: "Princess Carolyn", imgSrc: princess },
-    { id: uuid(), name: "Todd Chavez", imgSrc: todd },
+    { id: uuid(), clicked: false, name: "Becca", imgSrc: becca },
+    { id: uuid(), clicked: false, name: "BoJack Horseman", imgSrc: bojack },
+    { id: uuid(), clicked: false, name: "Charlotte Carson", imgSrc: charlotte },
+    { id: uuid(), clicked: false, name: "Diane Nguyen", imgSrc: diane },
+    { id: uuid(), clicked: false, name: "Hollyhock", imgSrc: hollyhock },
+    { id: uuid(), clicked: false, name: "Kelsey Jannings", imgSrc: kelsey },
+    { id: uuid(), clicked: false, name: "Kevin", imgSrc: kevin },
+    { id: uuid(), clicked: false, name: "Margo Martindale", imgSrc: margo },
+    {
+      id: uuid(),
+      clicked: false,
+      name: "Meow Meow Fuzzyface",
+      imgSrc: fuzzyface,
+    },
+    {
+      id: uuid(),
+      clicked: false,
+      name: "Mr. Peanutbutter",
+      imgSrc: peanutbutter,
+    },
+    { id: uuid(), clicked: false, name: "Princess Carolyn", imgSrc: princess },
+    { id: uuid(), clicked: false, name: "Todd Chavez", imgSrc: todd },
   ]);
 
-  const shuffleCards = () => setCharacters([...shuffleArray(characters)]);
+  const handleClick = (id) => {
+    const newArray = [...shuffleArray(characters)];
+
+    for (let char of newArray) {
+      if (char.id === id) {
+        char.clicked = true;
+        break;
+      }
+    }
+
+    console.table(newArray);
+    setCharacters([...newArray]);
+  };
 
   return (
     <StyledCards>
       {characters.map((char) => (
-        <Card
-          key={char.id}
-          charName={char.name}
-          imgSrc={char.imgSrc}
-          shuffleCards={shuffleCards}
-        />
+        <Card key={char.id} character={char} handleClick={handleClick} />
       ))}
     </StyledCards>
   );

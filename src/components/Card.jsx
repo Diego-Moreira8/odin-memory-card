@@ -45,11 +45,12 @@ const StyledCard = styled.div`
   }
 `;
 
-function Card({ imgSrc, charName, shuffleCards }) {
+function Card({ character, handleClick }) {
+  const { id, name, imgSrc } = character;
   return (
-    <StyledCard onClick={shuffleCards}>
-      <img src={imgSrc} alt={charName} />
-      <div>{charName}</div>
+    <StyledCard onClick={() => handleClick(id)}>
+      <img src={imgSrc} alt={name} />
+      <div>{name}</div>
     </StyledCard>
   );
 }
