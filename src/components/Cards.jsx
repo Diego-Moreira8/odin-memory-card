@@ -26,12 +26,15 @@ const StyledCards = styled.div`
   margin-bottom: 1rem;
 
   @media (max-width: 1350px) {
-    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
   }
 
   @media (max-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 650px) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
   }
 `;
 

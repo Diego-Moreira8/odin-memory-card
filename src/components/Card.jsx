@@ -8,13 +8,13 @@ const StyledCard = styled.div`
   border-radius: 1rem;
   border: 4px solid ${(props) => props.theme.black};
 
-  @media (max-width: 650px) {
+  @media (max-width: 1350px) {
     width: 130px;
     border-radius: 0.5rem;
     border: 2px solid ${(props) => props.theme.black};
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 650px) {
     width: 100px;
   }
 

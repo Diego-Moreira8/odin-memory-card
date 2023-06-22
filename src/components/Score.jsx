@@ -5,10 +5,6 @@ const StyledScore = styled.div`
   color: ${(props) => props.theme.yellow};
   text-align: center;
   margin: 1rem;
-
-  @media (max-width: 650px) {
-    margin: 0.5rem;
-  }
 `;
 
 function Score({ score }) {
