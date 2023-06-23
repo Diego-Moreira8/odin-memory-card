@@ -1,7 +1,9 @@
 import bojackLogo from "../images/bojack-logo.svg";
+import Help from "./Help";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
+  position: relative;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -20,6 +22,7 @@ function Header() {
   return (
     <StyledHeader>
       <img src={bojackLogo} alt="BoJack Horseman TV Show Logo" />
+      <Help />
     </StyledHeader>
   );
 }
