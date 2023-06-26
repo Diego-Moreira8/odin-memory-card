@@ -68,10 +68,10 @@ function Help() {
           <CloseButton onClick={closeTooltip}>X</CloseButton>
           <h2>How to play:</h2>
           <p>
-            In order to win the game you must click on each character only once!
-            The game ends when you've clicked on all of the 12 characters. If
-            you click on a character more than one time, you lose and the score
-            resets.<br></br>Good luck!
+            To win the game you must click on each character only once! The game
+            ends when you've clicked on all of the 12 characters. If you click 
+            on a character more than once, you lose and the score resets.
+            <br></br>Good luck!
           </p>
         </StyledHelpTooltip>
       )}
