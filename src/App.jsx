@@ -4,9 +4,11 @@ import MyFooter from "./components/MyFooter";
 import styled, { ThemeProvider } from "styled-components";
 import mainFont from "../src/fonts/ness.ttf";
 import Game from "./components/Game";
+import backgroundStars from "./images/background-stars.svg"
 
 const StyledApp = styled.div`
-  background: linear-gradient(#141146, #251e62);
+  background-image: url(${backgroundStars});
+
   min-height: 100vh;
 
   display: grid;

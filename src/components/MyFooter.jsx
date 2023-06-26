@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
     margin: 0 1rem;
   }
 
-  div:nth-of-type(2) {
+  > div:nth-of-type(2) {
     @media (max-width: 500px) {
       display: none;
     }
