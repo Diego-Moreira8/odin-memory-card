@@ -94,7 +94,7 @@ Error generating stack: `+o.message+`
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
-`;function gm(){const[e,t]=Qe.useState(!1),n=()=>t(!0),r=()=>t(!1);return D.jsxs(D.Fragment,{children:[D.jsx(Vf,{onClick:n,children:"?"}),e&&D.jsxs(vm,{children:[D.jsx(mm,{onClick:r,children:"X"}),D.jsx("h2",{children:"How to play:"}),D.jsxs("p",{children:["In order to win the game you must click on each character only once! The game ends when you've clicked on all of the 12 characters. If you click on a character more than one time, you lose and the score resets.",D.jsx("br",{}),"Good luck!"]})]})]})}const ym=gt.header`
+`;function gm(){const[e,t]=Qe.useState(!1),n=()=>t(!0),r=()=>t(!1);return D.jsxs(D.Fragment,{children:[D.jsx(Vf,{onClick:n,children:"?"}),e&&D.jsxs(vm,{children:[D.jsx(mm,{onClick:r,children:"X"}),D.jsx("h2",{children:"How to play:"}),D.jsxs("p",{children:["To win the game you must click on each character only once! The game ends when you've clicked on all of the 12 characters. If you click on a character more than once, you lose and the score resets.",D.jsx("br",{}),"Good luck!"]})]})]})}const ym=gt.header`
   position: relative;
   width: 100vw;
   display: flex;
@@ -123,7 +123,7 @@ Error generating stack: `+o.message+`
     margin: 0 1rem;
   }
 
-  div:nth-of-type(2) {
+  > div:nth-of-type(2) {
     @media (max-width: 500px) {
       display: none;
     }
@@ -227,8 +227,9 @@ The game will restart now.`),r(structuredClone(t))),e(o)},[n]),D.jsx(Wm,{childre
   display: flex;
   flex-flow: column;
   align-items: center;
-`;function Km(){const[e,t]=Qe.useState(0),n=r=>t(r);return D.jsxs(Ym,{children:[D.jsx(Em,{score:e}),D.jsx(Qm,{updateScore:n})]})}const Gm=gt.div`
-  background: linear-gradient(#141146, #251e62);
+`;function Km(){const[e,t]=Qe.useState(0),n=r=>t(r);return D.jsxs(Ym,{children:[D.jsx(Em,{score:e}),D.jsx(Qm,{updateScore:n})]})}const Gm=""+new URL("background-stars-b4b8c9aa.svg",import.meta.url).href,Xm=gt.div`
+  background-image: url(${Gm});
+
   min-height: 100vh;
 
   display: grid;
@@ -239,4 +240,4 @@ The game will restart now.`),r(structuredClone(t))),e(o)},[n]),D.jsx(Wm,{childre
     src: ${xm};
   }
   font-family: Ness, "Comic Sans MS", sans-serif;
-`,Xm={black:"#000",white:"#fff",yellow:"#F9CD24"};function Zm(){return D.jsx(hm,{theme:Xm,children:D.jsxs(Gm,{children:[D.jsx(wm,{}),D.jsx(Km,{}),D.jsx(km,{})]})})}Xo.createRoot(document.getElementById("root")).render(D.jsx(Wn.StrictMode,{children:D.jsx(Zm,{})}));
+`,Zm={black:"#000",white:"#fff",yellow:"#F9CD24"};function Jm(){return D.jsx(hm,{theme:Zm,children:D.jsxs(Xm,{children:[D.jsx(wm,{}),D.jsx(Km,{}),D.jsx(km,{})]})})}Xo.createRoot(document.getElementById("root")).render(D.jsx(Wn.StrictMode,{children:D.jsx(Jm,{})}));
